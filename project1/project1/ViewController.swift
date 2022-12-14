@@ -28,6 +28,8 @@ class ViewController: UITableViewController {
         }
         pictures.sort()
         print(pictures)
+        
+        
         }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pictures.count
@@ -46,5 +48,9 @@ class ViewController: UITableViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
+    func link() {
+        let git = "https://github.com/kiny123/project3"
+    }
+   
 }
 

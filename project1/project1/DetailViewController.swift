@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     var selectedImage: String?
     var selectedPictureNumber = 0
     var totalPictures = 0
+    var gitLink: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,17 +36,20 @@ class DetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false 
     }
+    
     @objc func shareTapped() {
         guard let image = ImageView.image?.jpegData(compressionQuality: 0.8)
         else {
             print("No image found")
             return
         }
+        gitLink = "https://github.com/kiny123/project3"
         
-        let vc = UIActivityViewController(activityItems: ["\(selectedImage!)", image], applicationActivities: [])
+        let vc = UIActivityViewController(activityItems: [gitLink!], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
     }
+    
     
 
     /*
